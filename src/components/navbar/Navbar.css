@@ -1,0 +1,10 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+button{
+    cursor: pointer;
+}
