@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { deleteUser } from '../../redux/deleteUser';
 import './User.css';
 
@@ -22,7 +23,7 @@ const User = ({ user, name, setName, job, setJob, avatar, setAvatar, setIdSelect
   return (
     <div className='user'>
         <div className="avatar-container">
-            <img src={ user.avatar } alt="avatar" />
+            <Link to={`/UserDetails/${user.id}`}><img src={ user.avatar } alt="avatar" /></Link>
         </div>
         <div className="user-informations">
             <p className="name"><span>Name :</span>{ user.name }</p>

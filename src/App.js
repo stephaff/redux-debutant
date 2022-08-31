@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
+import UserDetails from './pages/UserDetails';
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
         job={ job } setJob={ setJob } avatar={ avatar } setAvatar={ setAvatar }
         idSelected={ idSelected} setIdSelected={ setIdSelected } /> } 
       />
+      <Route path='/UserDetails/:id' element={ <UserDetails />} />
     </Routes>
   )
 }
