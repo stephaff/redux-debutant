@@ -48,7 +48,8 @@ const Navbar = ({ name, setName, job, setJob, avatar, setAvatar, idSelected }) =
       user : {
         name : name,
         job : job,
-        avatar : avatar
+        avatar : avatar,
+        id : idSelected
       }
     }
     dispatch(setUser(obj));
