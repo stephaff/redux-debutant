@@ -33,8 +33,8 @@ export const userReducer = (state = initialState, action) => {
         }
         case 'SET-USER' :{
             let newUser = [...state];
-            let index = newUser.findIndex(user => user.id === parseInt(action.payload));
-            newUser[index] = action.payload;
+            let index = newUser.findIndex(user => user.id === parseInt(action.payload.id));
+            newUser[index] = action.payload.user;
             return newUser;
         }
         default :{

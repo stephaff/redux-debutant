@@ -1,10 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteUser } from '../../redux/deleteUser';
-// import { setUser } from '../../redux/setUser';
 import './User.css';
 
-const User = ({ user }) => {
+const User = ({ user, name, setName, job, setJob, avatar, setAvatar, setIdSelected }) => {
 
   const dispatch = useDispatch();
 
@@ -13,7 +12,10 @@ const User = ({ user }) => {
   }
 
   const set = () => {
-    // dispatch(setUser());
+    setName(user.name);
+    setJob(user.job);
+    setAvatar(user.avatar);
+    setIdSelected(user.id);
   }
 
 

@@ -1,14 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../../redux/addUser';
+import { setUser } from '../../redux/setUser';
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ name, setName, job, setJob, avatar, setAvatar, idSelected }) => {
 
-  const [name, setName] = useState('');
-  const [job, setJob] = useState('');
-  const [avatar, setAvatar] = useState('');
   const dispatch = useDispatch();
 
   const handleChangeName = (e) => {
@@ -45,12 +42,28 @@ const Navbar = () => {
     setAvatar(null);
   }
 
+  const set = () => {
+    let obj = {
+      id : idSelected,
+      user : {
+        name : name,
+        job : job,
+        avatar : avatar
+      }
+    }
+    dispatch(setUser(obj));
+    setName('');
+    setJob('');
+    setAvatar(null);
+  }
+
   return (
     <div className='navbar'>
         <input type="text" placeholder='Name' onChange={ handleChangeName }  value={ name } />
         <input type="text" placeholder='Job' onChange={ handleChangeJob } value={ job } />
         <input type="file" onChange={ handleChangeFile } />
         <button onClick={ add }>Ajouter</button>
+        <button onClick={ set }>Modifier</button>
     </div>
   )
 }
